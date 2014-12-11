@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>CloudFoundry Stats</title>
+
+  <link href="./bootstrap.min.css" rel="stylesheet">
+  <style>
+
+  body {
+    font: 10px sans-serif;
+    margin: 20px;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  line.horizontalGrid,
+  line.verticalGrid {
+    stroke: #E7F1F7;
+  }
+
+  .x.axis g.tick line,
+  .y.axis g.tick,
+  .y.axis path.domain, .y.axis line {
+    stroke: #94A2AD;
+  }
+
+  .x.axis text, .y.axis text {
+    stroke-width: 0.7px;
+    fill: none;
+    font-weight: 100;
+    stroke: #3a3a3a;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-6" id="cpu-chart"></div>
+    <div class="col-md-6" id="mem-chart"></div>
+  </div>
+
+  <hr />
+
+  <script src="./d3.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
