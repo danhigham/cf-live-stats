@@ -212,10 +212,10 @@ func (plugin InfoPlugin) FindAppGuid(cliConnection plugin.CliConnection, appName
 
 func (InfoPlugin) GetMetadata() plugin.PluginMetadata {
 	return plugin.PluginMetadata{
-		Name: "Stats",
+		Name: "Live Stats",
 		Commands: []plugin.Command{
 			{
-				Name:     "stats",
+				Name:     "live-stats",
 				HelpText: "Show browser based stats",
 			},
 		},
