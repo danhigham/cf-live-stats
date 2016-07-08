@@ -5,8 +5,12 @@ This plug-in allows you to view live usage stats for an application in a browser
 ### Install
 
 ```
-$ go get github.com/danhigham/live-stats
-$ cf install-plugin $GOPATH/bin/live-stats
+$ go get github.com/danhigham/cf-live-stats
+$ cf install-plugin $GOPATH/bin/cf-live-stats
+
+OR
+
+$ cf install-plugin -r CF-Community 'Live Stats'
 ```
 
 ### Usage
