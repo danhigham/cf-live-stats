@@ -10,6 +10,7 @@ $ cf install-plugin $GOPATH/bin/cf-live-stats
 
 OR
 
+$ cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
 $ cf install-plugin -r CF-Community 'Live Stats'
 ```
 
