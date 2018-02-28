@@ -11,13 +11,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudfoundry/cli/cf/configuration/config_helpers"
-	"github.com/cloudfoundry/cli/cf/configuration/core_config"
+	"github.com/cloudfoundry/cli/cf/configuration/confighelpers"
+	"github.com/cloudfoundry/cli/cf/configuration/coreconfig"
 	"github.com/cloudfoundry/cli/plugin"
 	"github.com/mitchellh/colorstring"
 )
 
-const DATE_LAYOUT = "2006-01-02 15:04:05 -0700"
+const DATE_LAYOUT = time.RFC3339
 const CHART_SPAN = 300
 const UPDATE_INTERVAL = 3
 
@@ -197,8 +197,9 @@ func (plugin InfoPlugin) GetAppStats(cliConnection plugin.CliConnection, appGuid
 
 func (plugin InfoPlugin) FindAppGuid(cliConnection plugin.CliConnection, appName string) string {
 
-	confRepo := core_config.NewRepositoryFromFilepath(config_helpers.DefaultFilePath(), fatalIf)
-	spaceGuid := confRepo.SpaceFields().Guid
+	dfp, _ := confighelpers.DefaultFilePath()
+	confRepo := coreconfig.NewRepositoryFromFilepath(dfp, fatalIf)
+	spaceGuid := confRepo.SpaceFields().GUID
 
 	appQuery := fmt.Sprintf("/v2/spaces/%v/apps?q=name:%v&inline-relations-depth=1", spaceGuid, appName)
 	cmd := []string{"curl", appQuery}
